@@ -1,22 +1,30 @@
 
 const assertArraysEqual  = function(arr1, arr2) {
-  if(arr1.length === 0 && arr2.length === 0) {
-    console.log(`✅✅✅ Assertion Passed: Both arrays are empty.`);
-    return;
+  if(eqArrays(arr1,arr2) === true){
+    console.log(`✅✅✅ Assertion Passed: ${arr1}  === ${arr2}`);
   }
-  if(arr1.length !== arr2.length) {
-    console.log(`🛑🛑🛑 Assertion Failed: Both array lengths are different.`);
-    return;
+  else{
+    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !==  ${arr2}`);
   }
-  for(let i = 0; i < arr1.length; i++) {
-    if(arr1[i] !== arr2[i]) {
-      console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !==  ${arr2}`);
-      return;
-    }
-  }
-  console.log(`✅✅✅ Assertion Passed: ${arr1}  === ${arr2}`);
 };
 
+
+const eqArrays = function(arr1,arr2) {
+  if(arr1.length === 0 && arr2.length === 0) {
+    return true;
+  }
+  if(arr1.length !== arr2.length) {
+    return false;
+  }
+  else{
+    for(let i = 0; i < arr1.length; i++) {
+      if(arr1[i] !== arr2[i]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
 
 
 assertArraysEqual([1, 2, 3], [1, 2, 3]);
