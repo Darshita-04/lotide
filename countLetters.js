@@ -1,9 +1,7 @@
 const countLetters = function(sentence) {
-  let strArray = [];
   let result = {};
   let str = sentence.replace(/ /g, '');
-  strArray = str.split('');
-  for(let item of strArray) {
+  for(let item of str) {
     if(result[item]) {
       result[item] += 1;
     } else{
@@ -24,4 +22,8 @@ const assertEqual = function(actual, expected) {
 console.log(countLetters("MOM"))
 console.log(countLetters("WOW"))
 console.log(countLetters("HELLO"))
-
+let result = countLetters("HELLO");
+assertEqual(result['H'], 1);
+assertEqual(result['E'], 1);
+assertEqual(result['L'], 2);
+assertEqual(result['O'], 1);
