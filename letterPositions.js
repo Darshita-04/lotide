@@ -1,12 +1,13 @@
 const letterPositions = function (sentence) {
   let result = {};
-  let str = sentence.replace(/ /g, '');
-  for( let i = 0; i < str.length; i++) {
-    const letter = str[i];
-    if(!result[letter]) {
-      result[letter] = [];
+  for( let i = 0; i < sentence.length; i++) {
+    const letter = sentence[i];
+    if(letter !== ' '){
+      if(!result[letter]) {
+        result[letter] = [];
+      }
+      result[letter].push(i);
     }
-    result[letter].push(i);
   }
   return result;
 };
@@ -38,4 +39,4 @@ const assertArraysEqual  = function(arr1, arr2) {
 };
 
 assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions("hello World").W, [5]);
+assertArraysEqual(letterPositions("hello World").W, [6]);
