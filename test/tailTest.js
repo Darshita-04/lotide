@@ -1,18 +1,15 @@
 // importinng functions
-const assertEqual = require("../assertEqual");
+const assert = require('chai').assert;
 const tail = require("../tail");
 
 // test code
 
-let inputArray = ["Jan", "Feb", "Mar", "Apr"]
-let result = tail(inputArray);
-let result1 = tail(["Jan"]);
-let result2 = tail([]);
+describe("#tail", () => {
+  it(`returns ["Feb", "Mar", "Apr"] for ["Jan", "Feb", "Mar", "Apr"]`, () => {
+    assert.deepEqual(tail(["Jan", "Feb", "Mar", "Apr"]), ["Feb", "Mar", "Apr"]);
+  });
 
-assertEqual(result.length,3);
-assertEqual(result[0],"Feb");
-assertEqual(result[1],"Mar");
-assertEqual(result[2],"Apr");
-assertEqual(result1.length,0);
-assertEqual(result2.length,0);
-assertEqual(inputArray.length,4);
+  it(`returns ["Lighthouse", "Labs"] for ["Hello", "Lighthouse", "Labs"]`, () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]); 
+  });
+});
