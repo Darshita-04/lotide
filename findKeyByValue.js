@@ -6,6 +6,10 @@ const findKeyByValue = function(object,value) {
   }
 }
 
+
+// exporting function to be able to use by other files
+module.exports = findKeyByValue;
+
 const assertEqual = function(actual, expected) {
   if(actual === expected){
     console.log(`✅✅✅ Assertion Passed: ${actual}  === ${expected}`);

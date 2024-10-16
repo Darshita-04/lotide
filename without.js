@@ -36,6 +36,9 @@ const without = function(source,itemsToRemove ){
   return newArray;
 }
 
+// exporting function to be able to use by other files
+module.exports = without;
+
 without([1, 2, 3], [1]); // => [2, 3]
 without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
 const words = ["hello", "world", "lighthouse"];

@@ -8,6 +8,11 @@ const findKey = function(object, callback) {
   }
 }
 
+
+// exporting function to be able to use by other files
+module.exports = findKey;
+
+
 // assert equal
 
 const assertEqual = function(actual, expected) {

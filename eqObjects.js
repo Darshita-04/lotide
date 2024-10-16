@@ -1,3 +1,4 @@
+const eqArrays = require("./eqArrays");
 
 const assertEqual = function(actual, expected) {
   if(actual === expected){
@@ -7,22 +8,6 @@ const assertEqual = function(actual, expected) {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !==  ${expected}`);
   }
 };
-const eqArrays = function(arr1,arr2) {
-  if(arr1.length === 0 && arr2.length === 0) {
-    return true;
-  }
-  if(arr1.length !== arr2.length) {
-    return false;
-  }
-  else{
-    for(let i = 0; i < arr1.length; i++) {
-      if(arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-  }
-  return true;
-}
 
 const eqObjects = function(object1, object2) {
   const key1 = Object.keys(object1);
@@ -44,6 +29,9 @@ const eqObjects = function(object1, object2) {
   }
   return true;
 };
+
+// exporting function to be able to use by other files
+module.exports = eqObjects;
 
 // Tests
 

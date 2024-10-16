@@ -10,6 +10,10 @@ const takeUntil = function(array, callback) {
   }
 }
 
+
+// exporting function to be able to use by other files
+module.exports = takeUntil;
+
 // check if arrays are same
 
 const eqArrays = function(arr1,arr2) {

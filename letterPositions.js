@@ -12,6 +12,12 @@ const letterPositions = function (sentence) {
   return result;
 }
 
+
+
+// exporting function to be able to use by other files
+module.exports = letterPositions;
+
+
 const eqArrays = function(arr1,arr2) {
   if(arr1.length === 0 && arr2.length === 0) {
     return true;
