@@ -6,7 +6,7 @@ const middle = require("../middle");
 // test code
 
 describe("#middle", () => {
-  it(`returns ["Feb", "Mar", "Apr"] for ["Jan", "Feb", "Mar", "Apr"]`, () => {
+  it(`returns ['Hello'] for [1, 2, 3,4,'Hello',6,7,8,9]`, () => {
     assert.deepEqual(middle([1, 2, 3,4,'Hello',6,7,8,9]), ['Hello']);
   });
 
