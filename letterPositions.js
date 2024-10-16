@@ -1,16 +1,16 @@
 const letterPositions = function (sentence) {
   let result = {};
-  for( let i = 0; i < sentence.length; i++) {
-    const letter = sentence[i];
+  for(let i = 0; i < sentence.length; i++){
+    let letter = sentence[i];
     if(letter !== ' '){
-      if(!result[letter]) {
+      if(!result[letter]){
         result[letter] = [];
       }
-      result[letter].push(i);
+      result[letter].push(i)
     }
   }
   return result;
-};
+}
 
 const eqArrays = function(arr1,arr2) {
   if(arr1.length === 0 && arr2.length === 0) {
