@@ -3,8 +3,14 @@ const eqArrays = require("./eqArrays");
 const eqObjects = function(object1, object2) {
   const key1 = Object.keys(object1);
   const key2 = Object.keys(object2);
-  // check weather objects have sane number of keys or not
-  if(key1.length !== key2.length) {
+
+  // Check if both objects are empty
+  if (key1.length === 0 && key2.length === 0) {
+    return true;
+  }
+  
+  // Check if objects have the same number of keys
+  if (key1.length !== key2.length) {
     return false;
   }
   // check all keys and values are same
@@ -14,7 +20,12 @@ const eqObjects = function(object1, object2) {
         return false;
       }
     }
-    else if (object1[key] !== object2[key]) {
+    
+    if(typeof(object1[key]) === 'object' && typeof(object2[key]) === 'object'){
+      if (!eqObjects(object1[key], object2[key])) {
+        return false;
+      }
+    } else if (object1[key] !== object2[key]) {
       return false;
     }
   }

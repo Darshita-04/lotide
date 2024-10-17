@@ -8,8 +8,10 @@ const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
 const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
 const longSleeveShirtObject1 = { sleeveLength: "long", size: "medium", color: "red" };
-const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "orange"] };
+const multiColorShirtObject = {size: "medium", colors: ["red", "blue"], study:{school:"KV", collage:"mm"}};
+const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], study:{school:"KV", collage:"mm"} };
+
+console.log(eqObjects(multiColorShirtObject,anotherMultiColorShirtObject))
 
 describe("#eqObjects", () => {
   it(`returns true for ${shirtObject} and ${anotherShirtObject}`, () => {
@@ -18,8 +20,8 @@ describe("#eqObjects", () => {
   it(`returns true for ${longSleeveShirtObject} and ${longSleeveShirtObject1}`, () => {
     assert.deepStrictEqual(eqObjects(longSleeveShirtObject,longSleeveShirtObject1),true);
   });
-  it(`returns false for ${multiColorShirtObject} and ${anotherMultiColorShirtObject}`, () => {
-    assert.deepStrictEqual(eqObjects(multiColorShirtObject,anotherMultiColorShirtObject),false);
+  it(`returns true for ${multiColorShirtObject} and ${anotherMultiColorShirtObject}`, () => {
+    assert.deepStrictEqual(eqObjects(multiColorShirtObject,anotherMultiColorShirtObject),true);
   });
 });
 
