@@ -41,7 +41,8 @@ const flatten = function (arr){
 }
 
 
-
+// exporting function to be able to use by other files
+module.exports = flatten;
 
 // console.log(flatten([1, 2, [3, 4,[3, 4]], 5, [6]]));
 
