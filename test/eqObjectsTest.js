@@ -8,8 +8,8 @@ const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
 const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
 const longSleeveShirtObject1 = { sleeveLength: "long", size: "medium", color: "red" };
-const multiColorShirtObject = {size: "medium", colors: ["red", "blue"], study:{school:"KV", collage:"mm"}};
-const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], study:{school:"KV", collage:"mm"} };
+const multiColorShirtObject = {size: "medium", colors: ["red", "blue"], study:{school:"KV", collage:"mm", grades:{firstclass:true}}};
+const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], study:{school:"KV", collage:"mm", grades:{firstclass:true}} };
 
 console.log(eqObjects(multiColorShirtObject,anotherMultiColorShirtObject))
 
