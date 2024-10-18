@@ -42,3 +42,8 @@ The following functions are currently implemented:
 - `tail`: takes an array and returns a copy without the first value.
 - `takeUntil`: returns a new array taking the elements from the beginning of given array stoping when the condition in a given callback function is fullfilled.
 - `without`: takes 2 arrays, 1 with a set of values and other with the values to be removed from the first one and returns an array with the remaining values.
+
+The following dependencies are used to testing:
+
+`chai: ^4.3.1`,
+`mocha: ^9.2.2`
